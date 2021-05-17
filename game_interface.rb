@@ -106,8 +106,6 @@ module GameInterface
 
     puts <<-HEREDOC
     │────────────│
-    │            │
-    │            │
     #{man}
     │
     │──────│
