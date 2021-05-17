@@ -16,6 +16,8 @@ class Game
       puts "Please enter: #{valid_entries.join(' ')}"
       input = gets.chomp
     end
+
+    input
   end
 
   def self.random_word
