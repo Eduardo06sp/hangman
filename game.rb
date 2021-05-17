@@ -60,6 +60,8 @@ class Game
   end
 
   def end_game(outcome)
+    display_game
+
     if outcome == 'win'
       puts 'Congratulations! You guessed the word!'
     else
