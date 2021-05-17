@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Game
+  attr_accessor :moves
+
   def initialize(secret_word)
     @secret_word = secret_word
     @moves = ('a'..'z').to_a
@@ -10,6 +12,9 @@ class Game
   end
 
   def play_rounds
+    puts 'Make a guess, or type SAVE to save the game:'
+    input = gets.chomp
+    input = validate_input(input, moves + ['SAVE'])
   end
 
   def validate_input(input, valid_entries)
