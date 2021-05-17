@@ -5,7 +5,7 @@ require_relative 'game_interface'
 class Game
   include GameInterface
 
-  attr_accessor :moves, :secret_hint, :guesses_left
+  attr_accessor :moves, :secret_hint, :guesses_left, :wrong_guesses
   attr_reader :secret_word
 
   def initialize(secret_word)
