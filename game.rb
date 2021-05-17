@@ -2,6 +2,7 @@
 
 class Game
   attr_accessor :moves
+  attr_reader :secret_word
 
   def initialize(secret_word)
     @secret_word = secret_word
@@ -15,6 +16,9 @@ class Game
     puts 'Make a guess, or type SAVE to save the game:'
     input = gets.chomp
     input = validate_input(input, moves + ['SAVE'])
+
+    if secret_word.include?(input)
+    end
   end
 
   def validate_input(input, valid_entries)
