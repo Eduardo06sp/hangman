@@ -30,45 +30,75 @@ module GameInterface
 
   def display_hangman
     case guesses_left
-    when 6
+    when 8
       man =
         "│
+    │
+    │
+    │
+    │
+    │               "
+    when 7
+      man =
+        "│            │
+    │
+    │
+    │
+    │
+    │               "
+    when 6
+      man =
+        "│            │
+    │            │
+    │
     │
     │
     │               "
     when 5
       man =
-        "│            O
+        "│            │
+    │            │
+    │            O
     │
     │
     │               "
     when 4
       man =
-        "│            O
+        "│            │
+    │            │
+    │            O
     │            |
     │            |
     │               "
     when 3
       man =
-        "│            O
+        "│            │
+    │            │
+    │            O
     │           /|
     │            |
     │               "
     when 2
       man =
-        "│            O
+        "│            │
+    │            │
+    │            O
     │           /|\\
     │            |
     │               "
     when 1
       man =
-        "│            O
+        "│            │
+    │            │
+    │            O
     │           /|\\
     │            |
     │           /   "
     when 0
       man =
-        "│            O
+        "│            │
+    │            │
+    │            O
     │           /|\\
     │            |
     │           / \\"
