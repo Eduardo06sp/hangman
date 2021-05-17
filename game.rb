@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class Game
+  def initialize(secret_word)
+    @secret_word = secret_word
+    @wrong_guesses = []
+    @guesses_left = 6
+    @secret_hint = Array.new(secret_word.length) { '_' }
+  end
+
   def self.random_word
     game_words = []
 
