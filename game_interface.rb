@@ -3,20 +3,28 @@
 module GameInterface
   def display_separator
     puts <<-HEREDOC
-    -------------------------------------
-    -------------------------------------
+    ------------------------------------------------------------------
+    ------------------------------------------------------------------
     HEREDOC
   end
 
   def display_hint
     puts <<-HEREDOC
+
+
     Secret Word: #{secret_hint.join('   ')}
+
+
     HEREDOC
   end
 
   def display_incorrect_guesses
     puts <<-HEREDOC
+
+
     Incorrect Guesses (#{guesses_left} remaining): #{wrong_guesses.join(' ')}
+
+
     HEREDOC
   end
 
