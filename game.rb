@@ -11,6 +11,13 @@ class Game
   def play_rounds
   end
 
+  def validate_input(input, valid_entries)
+    until valid_entries.include?(input)
+      puts "Please enter: #{valid_entries.join(' ')}"
+      input = gets.chomp
+    end
+  end
+
   def self.random_word
     game_words = []
 
