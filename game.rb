@@ -13,7 +13,6 @@ class Game
   end
 
   def play_rounds
-
     puts 'Make a guess, or type SAVE to save the game:'
     input = gets.chomp
     input = validate_input(input, moves + ['SAVE'])
@@ -24,6 +23,14 @@ class Game
 
     update_moves(input)
     self.guesses_left -= 1
+
+    if secret_hint.join == secret_word
+      end_game('win')
+    elsif guesses_left.zero?
+      end_game('loss')
+    else
+      play_rounds
+    end
   end
 
   def end_game(outcome)
