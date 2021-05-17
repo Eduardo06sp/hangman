@@ -33,12 +33,28 @@ class Game
     end
   end
 
+  def rematch
+    puts 'Rematch?'
+    input = gets.chomp
+    input = validate_input(input, %w[yes y no n])
+
+    if %w[yes y].include?(input)
+      new_game = Game.new(Game.random_word)
+      new_game.play_rounds
+    else
+      puts 'Thanks for playing!'
+      puts 'Have a wonderful day. :}'
+    end
+  end
+
   def end_game(outcome)
     if outcome == 'win'
       puts 'Congratulations! You guessed the word!'
     else
       puts 'Better luck next time!'
     end
+
+    rematch
   end
 
   def update_moves(input)
