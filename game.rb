@@ -20,13 +20,18 @@ class Game
     display_game
 
     puts 'Make a guess, or type SAVE to save the game:'
-    input = gets.chomp
-    input = validate_input(input, moves + ['SAVE'])
 
-    if secret_word.include?(input)
-      update_hint(input)
+    if input.length > 1 && input != 'SAVE'
+      end_game('win') if input == secret_word
+
     else
-      update_wrong_guesses(input)
+      input = validate_input(input, moves + ['SAVE'])
+
+      if secret_word.include?(input)
+        update_hint(input)
+      else
+        update_wrong_guesses(input)
+      end
     end
 
     update_moves(input)
