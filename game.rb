@@ -20,6 +20,12 @@ class Game
     if secret_word.include?(input)
       update_hint(input)
     end
+
+    update_moves(input)
+  end
+
+  def update_moves(input)
+    moves.delete(input)
   end
 
   def update_hint(input)
