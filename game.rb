@@ -20,6 +20,7 @@ class Game
     display_game
 
     puts 'Make a guess, or type SAVE to save the game:'
+    input = gets.chomp.downcase
 
     if input.length > 1 && input != 'SAVE'
       end_game('win') if input == secret_word
