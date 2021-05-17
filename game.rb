@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  attr_accessor :moves, :secret_hint
+  attr_accessor :moves, :secret_hint, :guesses_left
   attr_reader :secret_word
 
   def initialize(secret_word)
@@ -22,6 +22,7 @@ class Game
     end
 
     update_moves(input)
+    self.guesses_left -= 1
   end
 
   def update_moves(input)
