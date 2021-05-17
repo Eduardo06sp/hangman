@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  attr_accessor :moves
+  attr_accessor :moves, :secret_hint
   attr_reader :secret_word
 
   def initialize(secret_word)
