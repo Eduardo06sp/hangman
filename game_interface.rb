@@ -7,6 +7,12 @@ module GameInterface
     HEREDOC
   end
 
+  def display_incorrect_guesses
+    puts <<-HEREDOC
+    Incorrect Guesses (#{guesses_left} remaining): #{wrong_guesses.join(' ')}
+    HEREDOC
+  end
+
   def display_hangman
     case guesses_left
     when 6
