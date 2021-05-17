@@ -61,6 +61,7 @@ class Game
     else
       puts 'Thanks for playing!'
       puts 'Have a wonderful day. :}'
+      exit
     end
   end
 
