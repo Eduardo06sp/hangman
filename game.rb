@@ -66,6 +66,7 @@ class Game
   end
 
   def end_game(outcome)
+    self.secret_hint = secret_word.split('')
     display_game
 
     if outcome == 'win'
