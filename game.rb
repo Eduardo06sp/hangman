@@ -8,6 +8,9 @@ class Game
     @secret_hint = Array.new(secret_word.length) { '_' }
   end
 
+  def play_rounds
+  end
+
   def self.random_word
     game_words = []
 
