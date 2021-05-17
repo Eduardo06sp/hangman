@@ -12,7 +12,7 @@ class Game
     @secret_word = secret_word
     @moves = ('a'..'z').to_a
     @wrong_guesses = []
-    @guesses_left = 6
+    @guesses_left = 8
     @secret_hint = Array.new(secret_word.length) { '_' }
   end
 
