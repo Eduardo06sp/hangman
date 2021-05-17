@@ -3,6 +3,7 @@
 class Game
   def initialize(secret_word)
     @secret_word = secret_word
+    @moves = ('a'..'z').to_a
     @wrong_guesses = []
     @guesses_left = 6
     @secret_hint = Array.new(secret_word.length) { '_' }
