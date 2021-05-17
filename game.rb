@@ -24,7 +24,6 @@ class Game
 
     if input.length > 1 && input != 'SAVE'
       end_game('win') if input == secret_word
-
     else
       input = validate_input(input, moves + ['SAVE'])
 
