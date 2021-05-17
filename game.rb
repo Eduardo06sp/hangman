@@ -13,6 +13,7 @@ class Game
   end
 
   def play_rounds
+
     puts 'Make a guess, or type SAVE to save the game:'
     input = gets.chomp
     input = validate_input(input, moves + ['SAVE'])
@@ -23,6 +24,14 @@ class Game
 
     update_moves(input)
     self.guesses_left -= 1
+  end
+
+  def end_game(outcome)
+    if outcome == 'win'
+      puts 'Congratulations! You guessed the word!'
+    else
+      puts 'Better luck next time!'
+    end
   end
 
   def update_moves(input)
