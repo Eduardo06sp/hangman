@@ -18,6 +18,13 @@ class Game
     input = validate_input(input, moves + ['SAVE'])
 
     if secret_word.include?(input)
+      update_hint(input)
+    end
+  end
+
+  def update_hint(input)
+    secret_word.split('').each_with_index do |secret_letter, index|
+      secret_hint[index] = secret_letter if input == secret_letter
     end
   end
 
