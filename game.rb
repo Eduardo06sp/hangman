@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
+require_relative 'game_interface'
+
 class Game
+  include GameInterface
+
   attr_accessor :moves, :secret_hint, :guesses_left
   attr_reader :secret_word
 
