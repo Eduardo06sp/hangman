@@ -78,4 +78,11 @@ module GameInterface
      ──────────────
     HEREDOC
   end
+
+  def display_game
+    display_separator
+    display_hint
+    display_hangman
+    display_incorrect_guesses
+  end
 end

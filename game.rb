@@ -17,6 +17,8 @@ class Game
   end
 
   def play_rounds
+    display_game
+
     puts 'Make a guess, or type SAVE to save the game:'
     input = gets.chomp
     input = validate_input(input, moves + ['SAVE'])
