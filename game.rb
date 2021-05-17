@@ -23,6 +23,8 @@ class Game
 
     if secret_word.include?(input)
       update_hint(input)
+    else
+      update_wrong_guesses(input)
     end
 
     update_moves(input)
@@ -35,6 +37,10 @@ class Game
     else
       play_rounds
     end
+  end
+
+  def update_wrong_guesses(input)
+    wrong_guesses.push(input)
   end
 
   def rematch
