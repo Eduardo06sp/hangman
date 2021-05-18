@@ -30,7 +30,7 @@ class Game
       puts 'GAME SAVED!'
       play_rounds
     else
-      input = validate_input(input, moves + ['SAVE'])
+      input = validate_input(input, moves)
 
       if secret_word.include?(input)
         update_hint(input)
