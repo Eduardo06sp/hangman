@@ -19,6 +19,11 @@ def load_game
   save.play_rounds
 end
 
+def create_game
+  new_game = Game.new(Game.random_word)
+  new_game.play_rounds
+end
+
 def intro
   puts 'Welcome!'
 
@@ -30,12 +35,10 @@ def intro
     if %w[yes y].include?(input)
       load_game
     else
-      new_game = Game.new(Game.random_word)
-      new_game.play_rounds
+      create_game
     end
   else
-    new_game = Game.new(Game.random_word)
-    new_game.play_rounds
+    create_game
   end
 end
 
