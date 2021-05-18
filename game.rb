@@ -19,11 +19,14 @@ class Game
   def play_rounds
     display_game
 
-    puts 'Make a guess, or type SAVE to save the game:'
+    puts 'Make a guess, or type :save to save the game:'
     input = gets.chomp.downcase
 
-    if input.length > 1 && input != 'SAVE'
+    if input.length > 1 && input != ':save'
       end_game('win') if input == secret_word
+    elsif input == ':save'
+      p 'SAVING!'
+      save_game
     else
       input = validate_input(input, moves + ['SAVE'])
 
