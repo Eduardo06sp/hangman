@@ -2,17 +2,22 @@
 
 require_relative 'game'
 
+def validate_input(input, valid_entries)
+  until valid_entries.include?(input)
+    puts "Please enter: #{valid_entries.join(' ')}"
+    input = gets.chomp
+  end
+
+  input
+end
+
 def intro
   puts 'Welcome!'
 
   if File.exist?('saves/latest_save.txt')
     puts 'Would you like to load your latest save?'
     input = gets.chomp
-
-    unless %w[yes y no n].include?(input)
-      puts 'Please type in: yes y no n'
-      input = gets.chomp
-    end
+    input = validate_input(input, %w[yes y no n])
 
     if %w[yes y].include?(input)
       save = File.open('saves/latest_save.txt', 'r') do |file|
