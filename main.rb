@@ -11,6 +11,14 @@ def validate_input(input, valid_entries)
   input
 end
 
+def load_game
+  save = File.open('saves/latest_save.txt', 'r') do |file|
+    YAML.load(file)
+  end
+
+  save.play_rounds
+end
+
 def intro
   puts 'Welcome!'
 
@@ -20,11 +28,7 @@ def intro
     input = validate_input(input, %w[yes y no n])
 
     if %w[yes y].include?(input)
-      save = File.open('saves/latest_save.txt', 'r') do |file|
-        YAML.load(file)
-      end
-
-      save.play_rounds
+      load_game
     else
       new_game = Game.new(Game.random_word)
       new_game.play_rounds
