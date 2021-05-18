@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# GameInterface loads all text used for the game's terminal interface
 module GameInterface
   def display_separator
     puts <<-HEREDOC
