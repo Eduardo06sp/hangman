@@ -2,6 +2,8 @@
 
 # GameInterface loads all text used for the game's terminal interface
 module GameInterface
+  private
+
   def display_separator
     puts <<-HEREDOC
     ------------------------------------------------------------------
