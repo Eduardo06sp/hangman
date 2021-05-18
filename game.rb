@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'game_interface'
+require 'yaml'
 
 class Game
   include GameInterface
@@ -25,8 +26,8 @@ class Game
     if input.length > 1 && input != ':save'
       end_game('win') if input == secret_word
     elsif input == ':save'
-      p 'SAVING!'
       save_game
+      puts 'GAME SAVED!'
     else
       input = validate_input(input, moves + ['SAVE'])
 
@@ -46,6 +47,15 @@ class Game
       end_game('loss')
     else
       play_rounds
+    end
+  end
+
+  def save_game
+    save = YAML.dump(self)
+
+    Dir.mkdir('saves') unless File.exist?('saves')
+    File.open('saves/latest_save.txt', 'w') do |file|
+      file.write(save)
     end
   end
 
