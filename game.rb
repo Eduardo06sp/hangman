@@ -56,6 +56,8 @@ class Game
     end
   end
 
+  private
+
   def save_game
     save = YAML.dump(self)
 
