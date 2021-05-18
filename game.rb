@@ -3,6 +3,11 @@
 require_relative 'game_interface'
 require 'yaml'
 
+# Game requires & includes the GameInterface to display the terminal inteface
+# It requires YAML to load (in main.rb) and save (#save_game) the game
+# It uses the class method #random_word to generate a random secret word
+#
+# It loops through rounds until game-ending conditions are met
 class Game
   include GameInterface
 
