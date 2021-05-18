@@ -47,13 +47,10 @@ class Game
     update_moves(input)
     self.guesses_left -= 1
 
-    if secret_hint.join == secret_word
-      end_game('win')
-    elsif guesses_left.zero?
-      end_game('loss')
-    else
-      play_rounds
-    end
+    return end_game('win') if secret_hint.join == secret_word
+    return end_game('loss') if guesses_left.zero?
+
+    play_rounds
   end
 
   private
