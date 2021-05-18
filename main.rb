@@ -14,7 +14,7 @@ def intro
       input = gets.chomp
     end
 
-    if %[yes y].include?(input)
+    if %w[yes y].include?(input)
       save = File.open('saves/latest_save.txt', 'r') do |file|
         YAML.load(file)
       end
