@@ -14,16 +14,13 @@ module GameInterface
 
     Secret Word: #{secret_hint.join('   ')}
 
-
     HEREDOC
   end
 
   def display_incorrect_guesses
     puts <<-HEREDOC
 
-
     Incorrect Guesses (#{guesses_left} remaining): #{wrong_guesses.join(' ')}
-
 
     HEREDOC
   end
