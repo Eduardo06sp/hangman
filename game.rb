@@ -28,6 +28,7 @@ class Game
     elsif input == ':save'
       save_game
       puts 'GAME SAVED!'
+      play_rounds
     else
       input = validate_input(input, moves + ['SAVE'])
 
